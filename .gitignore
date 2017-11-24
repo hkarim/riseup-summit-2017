@@ -57,6 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+# scala
+
+.idea
+target
+
 # Local files
 
 Notes.md
