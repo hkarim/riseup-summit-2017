@@ -31,9 +31,9 @@ object Tree {
 
     case Node(a, l, r) =>
       if (ordering.compare(data, a) < 0)
-        Node(a, Tree.insert(l, data)(ordering), r)
+        Node(a, Tree.insert(l, data), r)
       else
-        Node(a, l, Tree.insert(r, data)(ordering))
+        Node(a, l, Tree.insert(r, data))
   }
 
   def insert[A](tree: Tree[A], l: List[A])(implicit ordering: Ordering[A]): Tree[A] =
@@ -76,9 +76,7 @@ object E008ImplicitTreeApp {
 
   case class Money(value: Double)
 
-  implicit val moneyOrdering: Ordering[Money] = new Ordering[Money] {
-    def compare(x: Money, y: Money): Int = java.lang.Double.compare(x.value, y.value)
-  }
+  implicit val moneyOrdering: Ordering[Money] = (x: Money, y: Money) => java.lang.Double.compare(x.value, y.value)
 
   implicit class TreeOps[A](tree: Tree[A]) {
 

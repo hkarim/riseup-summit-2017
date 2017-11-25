@@ -41,7 +41,7 @@ object E005VarianceApp {
 
     contravariant(new Contravariant[LivingBeing])
     contravariant(new Contravariant[Animal])
-    //contravariant(new Contravariant[Cat])                              // will not compile
+    //contravariant(new Contravariant[Cat])                             // will not compile
   }
 
 
