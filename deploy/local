@@ -1,0 +1,20 @@
+
+# local
+
+[all]
+vm                    ansible_host=192.168.33.99
+
+
+[linux]
+vm
+
+[docker]
+vm                    
+
+[db]
+vm
+
+[local:children]
+linux
+docker
+db

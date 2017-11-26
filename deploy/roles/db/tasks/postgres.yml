@@ -1,0 +1,18 @@
+---
+
+- name: postgres database server
+  docker_container:
+    name: postgres
+    image: "{{version.postgres}}"
+    state: started
+    networks:
+      - name: "{{network}}"
+    volumes:
+      - "/var/lib/postgresql/data:/var/lib/postgresql/data"
+      - "/{{org}}:/{{org}}"
+    ports:
+      - "0.0.0.0:{{postgres.port}}:{{postgres.port}}"
+    env:
+      TERM: "xterm"
+      POSTGRES_USER: "{{org}}"
+      POSTGRES_PASSWORD: "{{org}}"

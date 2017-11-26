@@ -50,3 +50,16 @@ scalacOptions ++= Seq(
   "-Ywarn-unused:privates",            // Warn if a private member is unused.
   "-Ywarn-value-discard"               // Warn when non-Unit expression results are unused.
 )
+
+
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
+
+libraryDependencies += "org.typelevel" %% "cats-core" % "1.0.0-RC1"
+
+libraryDependencies += "org.postgresql" % "postgresql" % "42.1.4"
+
+libraryDependencies += "com.typesafe.slick" %% "slick" % "3.2.1"
+libraryDependencies += "com.typesafe.slick" %% "slick-hikaricp" % "3.2.1"
+
+libraryDependencies +="com.typesafe.akka" %% "akka-http" % "10.0.6"
+

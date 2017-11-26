@@ -1,0 +1,6 @@
+---
+
+env: local
+ansible_ssh_user: vagrant
+
+

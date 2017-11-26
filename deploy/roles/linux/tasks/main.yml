@@ -1,0 +1,34 @@
+---
+
+# install python 2, xenial doesn't come with python2
+- name: apt-get update
+  raw: apt-get update -qq
+- name: Install python 2.7
+  raw: apt-get install -qq python2.7
+
+- name: set machine locale
+  lineinfile: dest=/etc/environment line="LC_ALL=\"{{locale}}\"" state=present
+
+#- name: machine kernel options
+#  lineinfile: dest=/etc/default/grub line='GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"' state=present
+#
+
+- name: install curl
+  apt: name=curl state=present
+
+- name: install git
+  apt: name=git state=present
+
+- name: install python pip
+  apt: name=python-pip state=present
+
+- name: ensure sudo keeps SSH_AUTH_SOCK in environment
+  copy:
+    src: env
+    dest: /etc/sudoers.d/env
+    mode: 0440
+    owner: root
+    group: root
+
+
+

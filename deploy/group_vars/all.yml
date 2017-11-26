@@ -1,0 +1,39 @@
+---
+
+ansible_ssh_user: root
+private_network_interface: eth1
+public_network: "{{ansible_eth0}}"
+private_network: "{{ansible_eth1}}"
+
+# xenial doesn't come with python2 https://groups.google.com/forum/#!topic/Ansible-project/DUKzTho3OCI
+ansible_python_interpreter: /usr/bin/python2.7
+
+env: unknown
+org: "elmenus"
+base: "/{{org}}"
+network: "{{org}}"
+locale: "en_US.UTF-8"
+src: "{{base}}/git"
+
+version:
+  docker: "17.09.0~ce-0~ubuntu"
+  docker_compose: "1.16.1"
+  postgres: "postgres:latest"
+
+docker:
+  apt_keyserver: "hkp://p80.pool.sks-keyservers.net:80"
+  apt_keyid: "9DC858229FC7DD38854AE2D88D81803C0EBFCD88"
+  apt_repository: "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+  apt_prerequisites:
+    - apt-transport-https
+    - ca-certificates
+  systemd_dir: "/etc/systemd/system/docker.service.d"
+  advertise_port: 2376
+
+docker_network_driver: bridge
+
+postgres:
+  port: 5432
+
+
+

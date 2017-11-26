@@ -76,6 +76,7 @@ object E008ImplicitTreeApp {
 
   case class Money(value: Double)
 
+  // Notice Java 8 SAM support
   implicit val moneyOrdering: Ordering[Money] = (x: Money, y: Money) => java.lang.Double.compare(x.value, y.value)
 
   implicit class TreeOps[A](tree: Tree[A]) {

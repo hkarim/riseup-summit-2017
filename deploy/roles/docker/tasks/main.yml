@@ -1,0 +1,51 @@
+---
+
+- name: get kernel version
+  shell: uname -r
+  register: kernel_version
+
+- name: apt-get update
+  apt: update_cache=yes
+
+- name: docker prerequisites
+  apt: name={{item}} state=present
+  with_items: "{{docker.apt_prerequisites}}"
+
+- name: install docker apt-key
+  apt_key: keyserver="{{docker.apt_keyserver}}" id="{{docker.apt_keyid}}"
+
+- name: install docker apt repository
+  apt_repository: repo="{{docker.apt_repository}}" state=present
+
+- name: apt-get update
+  apt: update_cache=yes
+
+- name: linux image extra
+  apt: name="linux-image-extra-{{ansible_kernel}}" state=present
+  register: linux_image_extra_install
+  ignore_errors: yes
+
+- name: Try again to install linux-image-extra if previous attempt failed
+  apt:
+    pkg: "linux-image-extra-{{ ansible_kernel.split('-')[:-1]|join('-') }}*"
+    state: present
+    update_cache: yes
+  when: linux_image_extra_install|failed
+
+- name: install docker-ce
+  apt: name="docker-ce={{version.docker}}" state=present
+
+- name: install docker-compose
+  pip: name=docker-compose state=present version={{version.docker_compose}}
+
+- name: "create docker {{docker_network_driver}} network"
+  docker_network:
+    name: "{{network}}"
+    state: present
+    driver: "{{docker_network_driver}}"
+
+- name: add current user to docker group
+  user:
+    name: "{{ansible_user}}"
+    groups: docker
+    append: yes
