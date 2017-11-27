@@ -1,5 +1,11 @@
 ---
 
+- name: create postgres script directory
+  file: name="{{base}}/postgres/script" state="directory"
+
+- name: sync script directory
+  synchronize: src="script/" dest="{{base}}/postgres/script"
+
 - name: postgres database server
   docker_container:
     name: postgres
@@ -16,3 +22,13 @@
       TERM: "xterm"
       POSTGRES_USER: "{{org}}"
       POSTGRES_PASSWORD: "{{org}}"
+
+- name: drop world database
+  command: "docker exec postgres psql -U {{org}} -a -f {{base}}/postgres/script/world-1.0/down.sql"
+  when: dropdb is defined and dropdb
+
+- name: create world database
+  command: "docker exec postgres psql -U {{org}} -a -f {{base}}/postgres/script/world-1.0/up.sql"
+
+- name: create world database structure and data
+  command: "docker exec postgres psql -d world -U {{org}} -a -f {{base}}/postgres/script/world-1.0/world.sql"

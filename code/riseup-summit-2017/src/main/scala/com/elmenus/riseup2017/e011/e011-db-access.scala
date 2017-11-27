@@ -1,7 +1,7 @@
 package com.elmenus.riseup2017.e011
 
 import akka.actor.ActorSystem
-import akka.stream.ActorMaterializer
+import akka.stream.{ActorMaterializer, OverflowStrategy}
 import akka.stream.scaladsl.Source
 import com.typesafe.config.{Config, ConfigFactory}
 import org.slf4j.{Logger, LoggerFactory}
@@ -17,7 +17,7 @@ object DB01 {
   import scala.concurrent.ExecutionContext.Implicits.global
 
   lazy val configuration: Config = ConfigFactory.load()
-  lazy val db: Database = Database.forConfig("db.connection-pool", configuration)
+  lazy val db: Database = Database.forConfig("db.elmenus", configuration)
 
   def main(args: Array[String]): Unit = {
 
@@ -41,7 +41,7 @@ object DB02 {
   import scala.concurrent.ExecutionContext.Implicits.global
 
   lazy val configuration: Config = ConfigFactory.load()
-  lazy val db: Database = Database.forConfig("db.connection-pool", configuration)
+  lazy val db: Database = Database.forConfig("db.elmenus", configuration)
   lazy val log: Logger = LoggerFactory.getLogger("DB02")
 
   case class Account(id: Long, email: String)
@@ -87,19 +87,23 @@ object DB02 {
 
 object DB03 {
 
+  import scala.concurrent.duration._
+
   implicit val actorSystem: ActorSystem             = ActorSystem()
   implicit val actorMaterializer: ActorMaterializer = ActorMaterializer()
   implicit val executionContext: ExecutionContext   = actorSystem.dispatcher
 
   lazy val configuration: Config = actorSystem.settings.config
-  lazy val db: Database = Database.forConfig("db.connection-pool", configuration)
-  lazy val log: Logger = LoggerFactory.getLogger("DB02")
+  lazy val db: Database = Database.forConfig("db.world", configuration)
+  lazy val log: Logger = LoggerFactory.getLogger("DB03")
 
-  case class Account(id: Long, email: String)
+  case class City(id: Long, name: String, countryCode: String, district: String, population: Long)
 
-  implicit val grUser: GetResult[Account] = GetResult(r => Account(r.<<, r.<<))
+  implicit val grUser: GetResult[City] =
+    GetResult(r => City(r.<<, r.<<, r.<<, r.<<, r.<<))
 
-  val findAllAccounts: StreamingDBIO[Vector[Account], Account] = sql"select id, email from account".as[Account]
+  val findAllAccounts: StreamingDBIO[Vector[City], City] =
+    sql"select id, name, countrycode, district, population from city".as[City]
 
 
   def main(args: Array[String]): Unit = {
@@ -107,6 +111,7 @@ object DB03 {
     val f =
       Source
       .fromPublisher(db.stream(findAllAccounts.transactionally))
+      .delay(1.second, OverflowStrategy.backpressure)
       .runForeach(println)
 
     f.onComplete(_ => actorSystem.terminate())
