@@ -1,14 +1,13 @@
 package com.elmenus.riseup2017.e011
 
-import akka.actor.ActorSystem
-import akka.stream.{ActorMaterializer, OverflowStrategy}
+import akka.stream.OverflowStrategy
 import akka.stream.scaladsl.Source
 import com.typesafe.config.{Config, ConfigFactory}
 import org.slf4j.{Logger, LoggerFactory}
 import slick.jdbc.GetResult
 import slick.jdbc.PostgresProfile.api._
 
-import scala.concurrent.{Await, ExecutionContext}
+import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 import scala.util.{Failure, Success}
 
@@ -85,22 +84,14 @@ object DB02 {
 }
 
 
-object DB03 {
+object DB03 extends Context {
+
+  import SlickFormat._
 
   import scala.concurrent.duration._
 
-  implicit val actorSystem: ActorSystem             = ActorSystem()
-  implicit val actorMaterializer: ActorMaterializer = ActorMaterializer()
-  implicit val executionContext: ExecutionContext   = actorSystem.dispatcher
-
-  lazy val configuration: Config = actorSystem.settings.config
   lazy val db: Database = Database.forConfig("db.world", configuration)
   lazy val log: Logger = LoggerFactory.getLogger("DB03")
-
-  case class City(id: Long, name: String, countryCode: String, district: String, population: Long)
-
-  implicit val grUser: GetResult[City] =
-    GetResult(r => City(r.<<, r.<<, r.<<, r.<<, r.<<))
 
   val findAllAccounts: StreamingDBIO[Vector[City], City] =
     sql"select id, name, countrycode, district, population from city".as[City]

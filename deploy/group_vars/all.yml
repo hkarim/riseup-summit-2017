@@ -19,6 +19,7 @@ version:
   docker: "17.09.0~ce-0~ubuntu"
   docker_compose: "1.16.1"
   postgres: "postgres:latest"
+  mongo: "mongo:latest"
 
 docker:
   apt_keyserver: "hkp://p80.pool.sks-keyservers.net:80"
@@ -34,6 +35,10 @@ docker_network_driver: bridge
 
 postgres:
   port: 5432
+
+mongo:
+  port: 27017
+  
 
 
 

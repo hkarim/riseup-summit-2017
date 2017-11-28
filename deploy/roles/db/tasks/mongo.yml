@@ -1,0 +1,14 @@
+---
+
+- name: mongo database server
+  docker_container:
+    name: mongo
+    image: "{{version.mongo}}"
+    state: started
+    networks:
+      - name: "{{network}}"
+    volumes:
+      - "/var/lib/mongo/data:/data/db"
+      - "/{{org}}:/{{org}}"
+    ports:
+      - "0.0.0.0:{{mongo.port}}:{{mongo.port}}"

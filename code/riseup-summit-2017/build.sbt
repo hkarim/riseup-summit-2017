@@ -54,12 +54,22 @@ scalacOptions ++= Seq(
 
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
 
-libraryDependencies += "org.typelevel" %% "cats-core" % "1.0.0-RC1"
+//libraryDependencies += "org.typelevel" %% "cats-core" % "1.0.0-RC1"
 
 libraryDependencies += "org.postgresql" % "postgresql" % "42.1.4"
 
 libraryDependencies += "com.typesafe.slick" %% "slick" % "3.2.1"
 libraryDependencies += "com.typesafe.slick" %% "slick-hikaricp" % "3.2.1"
 
+libraryDependencies += "org.mongodb" % "mongodb-driver-reactivestreams" % "1.6.0"
+
+libraryDependencies ++= Seq(
+  "io.circe" %% "circe-core" % "0.8.0",
+  "io.circe" %% "circe-generic" % "0.8.0",
+  "io.circe" %% "circe-parser" % "0.8.0"
+)
+
+
 libraryDependencies +="com.typesafe.akka" %% "akka-http" % "10.0.6"
+
 
