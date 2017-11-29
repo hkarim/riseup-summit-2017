@@ -50,10 +50,10 @@ object Tree {
 
 object E008TreeApp {
 
-  case class Money(value: Double)
+  case class Money(value: Float)
 
   implicit val moneyOrdering: Ordering[Money] = new Ordering[Money] {
-    def compare(x: Money, y: Money): Int = java.lang.Double.compare(x.value, y.value)
+    def compare(x: Money, y: Money): Int = java.lang.Float.compare(x.value, y.value)
   }
 
 
@@ -62,7 +62,7 @@ object E008TreeApp {
 
     val t01 = Tree.insert(Tree.empty, List(5,6,3,0,9,1,13,5,-1))
 
-    val t02 = Tree.insert(Tree.empty, Stream.continually(Random.nextDouble).take(5).map(Money).toList)
+    val t02 = Tree.insert(Tree.empty, Stream.continually(Random.nextFloat).take(5).map(Money).toList)
 
     println(Tree.inOrder(t01))
 
@@ -79,11 +79,11 @@ object E008ImplicitTreeApp {
   // Notice Java 8 SAM support
   implicit val moneyOrdering: Ordering[Money] = (x: Money, y: Money) => java.lang.Double.compare(x.value, y.value)
 
-  implicit class TreeOps[A](tree: Tree[A]) {
+  implicit class TreeOps[T](tree: Tree[T]) {
 
-    def insert(l: List[A])(implicit ordering: Ordering[A]): Tree[A] = Tree.insert(tree, l)
+    def insert(l: List[T])(implicit ordering: Ordering[T]): Tree[T] = Tree.insert(tree, l)
 
-    def inOrder: List[A] = Tree.inOrder(tree)
+    def inOrder: List[T] = Tree.inOrder(tree)
 
   }
 

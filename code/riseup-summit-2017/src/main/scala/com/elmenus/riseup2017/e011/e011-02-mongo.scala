@@ -101,7 +101,7 @@ object Mongo02 extends Context {
           case e =>
             e.printStackTrace()
         }
-        .runForeach(_ => println)
+        .runForeach(println)
       ()
     }
 

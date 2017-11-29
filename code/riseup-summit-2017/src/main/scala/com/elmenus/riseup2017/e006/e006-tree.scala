@@ -13,9 +13,11 @@ case object Empty extends Tree[Nothing]
 
 object Tree {
 
-  def empty: Empty.type = Empty
+  def empty[A]: Tree[A] = Empty
 
   def of[A](data: A): Tree[A] = Leaf(data)
+
+  def apply[A](data: A): Tree[A] = Leaf(data)
 
   def insert[A](tree: Tree[A], data: A)(ordering: Ordering[A]): Tree[A] = tree match {
 
@@ -70,11 +72,13 @@ object E006App {
     }
   }
 
+  def insert(l: List[Int]): Tree[Int] = insert(Tree.empty, l)
+
 
 
   def main(args: Array[String]): Unit = {
 
-    val tree = insert(Tree.empty, List(5,6,3,0,9,1,13,5,-1))
+    val tree = insert(List(5,6,3,0,9,1,13,5,-1))
 
     println(Tree.inOrder(tree))
   }

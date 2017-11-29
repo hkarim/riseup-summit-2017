@@ -25,9 +25,9 @@ object E005VarianceApp {
 
   def main(args: Array[String]): Unit = {
 
-    //invariant(new Covariant[LivingBeing])                            // will not compile
+    //invariant(new Invariant[LivingBeing])                            // will not compile
     invariant(new Invariant[Animal])
-    //invariant(new Covariant[Cat])                                    // will not compile
+    //invariant(new Invariant[Cat])                                    // will not compile
 
 
 
