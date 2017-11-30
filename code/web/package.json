@@ -1,0 +1,16 @@
+{
+  "name": "riseup",
+  "version": "1.0.0",
+  "description": "## Getting started",
+  "main": "index.js",
+  "scripts": {
+    "elm": "elm-package install",
+    "build": "elm-make src/Main.elm --output index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "elm": "^0.18.0"
+  }
+}
