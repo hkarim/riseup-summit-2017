@@ -18,9 +18,3 @@ ws.on('message', (data) => {
 ws.on('close', () => {
   console.log("closing")
 });
-
-/*
-const interval = setInterval(function ping() {
-	ws.send("ping", (err) => {
-	});
-}, 1000);*/
