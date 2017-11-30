@@ -7,7 +7,7 @@ import java.time.LocalDate
 object E006App01 {
 
   case class Name(value: String)
-  case class Person(name: Name, birthData: LocalDate)
+  case class Person(name: Name, birthDate: LocalDate)
 
   def main(args: Array[String]): Unit = {
 
@@ -42,9 +42,9 @@ object E006App02 {
   case class Animal(name: Name) extends LivingBeing
 
   def classify(being: LivingBeing): String = being match {
-    case Person(n, bd) => s"This is a person called: ${n.value} born at ${bd.toString}"
-    case Animal(n)     => s"This is an animal called: ${n.value}"
-    case lb            => s"This is a living being with name: ${lb.name.value}"
+    case Person(n, bd) => s"a person called: ${n.value} born ${bd.toString}"
+    case Animal(n)     => s"an animal called: ${n.value}"
+    case _             => s"a living being called: ${being.name.value}"
   }
 
   def main(args: Array[String]): Unit = {

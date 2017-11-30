@@ -23,8 +23,6 @@
   },
   "homepage": "https://github.com/hkarim/riseup-summit-2017#readme",
   "dependencies": {
-    "headjs": "^1.0.3",
-    "http-server": "^0.10.0",
-    "reveal.js": "^3.5.0"
+    "http-server": "^0.10.0"
   }
 }

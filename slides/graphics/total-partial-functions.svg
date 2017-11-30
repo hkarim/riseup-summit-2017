@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="160 111 777 472" width="777pt" height="472pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.3.1 
+    <dc:date>2017-11-29 23:01:52 +0000</dc:date>
+  </metadata>
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="#666">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Helvetica Neue" font-size="19" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="500">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="24" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="500">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>total-parial-functions</title>
+    <rect fill="white" width="1141" height="775"/>
+    <g>
+      <title>functions</title>
+      <ellipse cx="237.75" cy="339.25" rx="76.25012" ry="171.75027" fill="white"/>
+      <ellipse cx="237.75" cy="339.25" rx="76.25012" ry="171.75027" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <ellipse cx="427.5" cy="346.75" rx="76.25012" ry="171.75027" fill="white"/>
+      <ellipse cx="427.5" cy="346.75" rx="76.25012" ry="171.75027" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path d="M 230.75 235.5 L 244.75 235.5 C 249.16828 235.5 252.75 239.08172 252.75 243.5 L 252.75 258.5 C 252.75 262.91828 249.16828 266.5 244.75 266.5 L 230.75 266.5 C 226.33172 266.5 222.75 262.91828 222.75 258.5 L 222.75 243.5 C 222.75 239.08172 226.33172 235.5 230.75 235.5 Z" fill="white"/>
+      <path d="M 230.75 235.5 L 244.75 235.5 C 249.16828 235.5 252.75 239.08172 252.75 243.5 L 252.75 258.5 C 252.75 262.91828 249.16828 266.5 244.75 266.5 L 230.75 266.5 C 226.33172 266.5 222.75 262.91828 222.75 258.5 L 222.75 243.5 C 222.75 239.08172 226.33172 235.5 230.75 235.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 230.75 299 L 244.75 299 C 249.16828 299 252.75 302.58172 252.75 307 L 252.75 322 C 252.75 326.41828 249.16828 330 244.75 330 L 230.75 330 C 226.33172 330 222.75 326.41828 222.75 322 L 222.75 307 C 222.75 302.58172 226.33172 299 230.75 299 Z" fill="white"/>
+      <path d="M 230.75 299 L 244.75 299 C 249.16828 299 252.75 302.58172 252.75 307 L 252.75 322 C 252.75 326.41828 249.16828 330 244.75 330 L 230.75 330 C 226.33172 330 222.75 326.41828 222.75 322 L 222.75 307 C 222.75 302.58172 226.33172 299 230.75 299 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 230.75 354.5 L 244.75 354.5 C 249.16828 354.5 252.75 358.08172 252.75 362.5 L 252.75 377.5 C 252.75 381.9183 249.16828 385.5 244.75 385.5 L 230.75 385.5 C 226.33172 385.5 222.75 381.9183 222.75 377.5 L 222.75 362.5 C 222.75 358.08172 226.33172 354.5 230.75 354.5 Z" fill="white"/>
+      <path d="M 230.75 354.5 L 244.75 354.5 C 249.16828 354.5 252.75 358.08172 252.75 362.5 L 252.75 377.5 C 252.75 381.9183 249.16828 385.5 244.75 385.5 L 230.75 385.5 C 226.33172 385.5 222.75 381.9183 222.75 377.5 L 222.75 362.5 C 222.75 358.08172 226.33172 354.5 230.75 354.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 230.75 410 L 244.75 410 C 249.16828 410 252.75 413.5817 252.75 418 L 252.75 433 C 252.75 437.4183 249.16828 441 244.75 441 L 230.75 441 C 226.33172 441 222.75 437.4183 222.75 433 L 222.75 418 C 222.75 413.5817 226.33172 410 230.75 410 Z" fill="white"/>
+      <path d="M 230.75 410 L 244.75 410 C 249.16828 410 252.75 413.5817 252.75 418 L 252.75 433 C 252.75 437.4183 249.16828 441 244.75 441 L 230.75 441 C 226.33172 441 222.75 437.4183 222.75 433 L 222.75 418 C 222.75 413.5817 226.33172 410 230.75 410 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="427.5" cy="248" r="18.50003" fill="white"/>
+      <circle cx="427.5" cy="248" r="18.50003" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="427.5" cy="317.5" r="18.50003" fill="white"/>
+      <circle cx="427.5" cy="317.5" r="18.50003" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="427.5" cy="387" r="18.50003" fill="white"/>
+      <circle cx="427.5" cy="387" r="18.50003" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="427.5" cy="444.5" r="18.50003" fill="white"/>
+      <circle cx="427.5" cy="444.5" r="18.50003" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 250.92843 238.41762 C 270.3503 221.19243 308.44613 192.3144 346.1211 191.71875 C 376.18605 191.24341 398.0762 208.90382 411.5315 224.56296" marker-end="url(#FilledArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 252.50436 305.025 C 268.1612 296.3637 295.24874 284.97034 328.75 285.5 C 357.87145 285.96042 384.4209 295.31283 402.63893 303.78813" marker-end="url(#FilledArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 252.75 363.69154 C 268.4436 358.18773 295.42328 351.5142 328.75 354.5 C 357.6126 357.08585 383.94875 366.26374 402.15116 374.2096" marker-end="url(#FilledArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 252.3797 435.41287 C 270.54223 446.18887 303.50883 460.968 339.16016 453.7344 C 370.1497 447.44664 394.7672 426.23104 410.0608 409.38817" marker-end="url(#FilledArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <ellipse cx="668.75" cy="335.5" rx="76.25012" ry="171.75027" fill="white"/>
+      <ellipse cx="668.75" cy="335.5" rx="76.25012" ry="171.75027" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <ellipse cx="858.5" cy="343" rx="76.25012" ry="171.75027" fill="white"/>
+      <ellipse cx="858.5" cy="343" rx="76.25012" ry="171.75027" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path d="M 661.75 231.75 L 675.75 231.75 C 680.1683 231.75 683.75 235.33172 683.75 239.75 L 683.75 254.75 C 683.75 259.16828 680.1683 262.75 675.75 262.75 L 661.75 262.75 C 657.3317 262.75 653.75 259.16828 653.75 254.75 L 653.75 239.75 C 653.75 235.33172 657.3317 231.75 661.75 231.75 Z" fill="white"/>
+      <path d="M 661.75 231.75 L 675.75 231.75 C 680.1683 231.75 683.75 235.33172 683.75 239.75 L 683.75 254.75 C 683.75 259.16828 680.1683 262.75 675.75 262.75 L 661.75 262.75 C 657.3317 262.75 653.75 259.16828 653.75 254.75 L 653.75 239.75 C 653.75 235.33172 657.3317 231.75 661.75 231.75 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 661.75 295.25 L 675.75 295.25 C 680.1683 295.25 683.75 298.83172 683.75 303.25 L 683.75 318.25 C 683.75 322.66828 680.1683 326.25 675.75 326.25 L 661.75 326.25 C 657.3317 326.25 653.75 322.66828 653.75 318.25 L 653.75 303.25 C 653.75 298.83172 657.3317 295.25 661.75 295.25 Z" fill="white"/>
+      <path d="M 661.75 295.25 L 675.75 295.25 C 680.1683 295.25 683.75 298.83172 683.75 303.25 L 683.75 318.25 C 683.75 322.66828 680.1683 326.25 675.75 326.25 L 661.75 326.25 C 657.3317 326.25 653.75 322.66828 653.75 318.25 L 653.75 303.25 C 653.75 298.83172 657.3317 295.25 661.75 295.25 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 661.75 350.75 L 675.75 350.75 C 680.1683 350.75 683.75 354.33172 683.75 358.75 L 683.75 373.75 C 683.75 378.1683 680.1683 381.75 675.75 381.75 L 661.75 381.75 C 657.3317 381.75 653.75 378.1683 653.75 373.75 L 653.75 358.75 C 653.75 354.33172 657.3317 350.75 661.75 350.75 Z" fill="white"/>
+      <path d="M 661.75 350.75 L 675.75 350.75 C 680.1683 350.75 683.75 354.33172 683.75 358.75 L 683.75 373.75 C 683.75 378.1683 680.1683 381.75 675.75 381.75 L 661.75 381.75 C 657.3317 381.75 653.75 378.1683 653.75 373.75 L 653.75 358.75 C 653.75 354.33172 657.3317 350.75 661.75 350.75 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 661.75 406.25 L 675.75 406.25 C 680.1683 406.25 683.75 409.8317 683.75 414.25 L 683.75 429.25 C 683.75 433.6683 680.1683 437.25 675.75 437.25 L 661.75 437.25 C 657.3317 437.25 653.75 433.6683 653.75 429.25 L 653.75 414.25 C 653.75 409.8317 657.3317 406.25 661.75 406.25 Z" fill="white"/>
+      <path d="M 661.75 406.25 L 675.75 406.25 C 680.1683 406.25 683.75 409.8317 683.75 414.25 L 683.75 429.25 C 683.75 433.6683 680.1683 437.25 675.75 437.25 L 661.75 437.25 C 657.3317 437.25 653.75 433.6683 653.75 429.25 L 653.75 414.25 C 653.75 409.8317 657.3317 406.25 661.75 406.25 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="858.5" cy="244.25" r="18.50003" fill="white"/>
+      <circle cx="858.5" cy="244.25" r="18.50003" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="858.5" cy="313.75" r="18.50003" fill="white"/>
+      <circle cx="858.5" cy="313.75" r="18.50003" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="858.5" cy="383.25" r="18.50003" fill="white"/>
+      <circle cx="858.5" cy="383.25" r="18.50003" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle cx="858.5" cy="440.75" r="18.50003" fill="white"/>
+      <circle cx="858.5" cy="440.75" r="18.50003" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 681.9284 234.66762 C 701.3503 217.44243 739.4461 188.5644 777.1211 187.96875 C 807.186 187.49341 829.0762 205.15382 842.5315 220.81296" marker-end="url(#FilledArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 683.50436 301.275 C 699.1612 292.6137 726.2487 281.22034 759.75 281.75 C 788.8715 282.21042 815.4209 291.56283 833.6389 300.03813" marker-end="url(#FilledArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 683.75 428.1323 C 701.988 435.3133 734.7498 446.43867 770.1602 449.9844 C 795.1034 452.482 815.9185 450.6737 831.0662 448.01767" marker-end="url(#FilledArrow_Marker)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <text transform="translate(205.75 531.968)" fill="black">
+        <tspan font-family="Helvetica Neue" font-size="19" font-weight="500" x=".3175" y="18" textLength="63.365">domain</tspan>
+        <tspan font-family="Helvetica Neue" font-size="19" font-weight="500" x="26.1955" y="40.532" textLength="11.609">X</tspan>
+      </text>
+      <text transform="translate(385 531.968)" fill="black">
+        <tspan font-family="Helvetica Neue" font-size="19" font-weight="500" x=".263" y="18" textLength="84.474">codomain</tspan>
+        <tspan font-family="Helvetica Neue" font-size="19" font-weight="500" x="36.344" y="40.532" textLength="12.312">Y</tspan>
+      </text>
+      <text transform="translate(250.5 116.164)" fill="black">
+        <tspan font-family="Helvetica Neue" font-size="24" font-weight="500" x=".152" y="23" textLength="13.776">T</tspan>
+        <tspan font-family="Helvetica Neue" font-size="24" font-weight="500" x="11.264" y="23" textLength="139.584">otal Function</tspan>
+      </text>
+      <text transform="translate(694 116.164)" fill="black">
+        <tspan font-family="Helvetica Neue" font-size="24" font-weight="500" x=".216" y="23" textLength="167.568">Partial Function</tspan>
+      </text>
+      <text transform="translate(633 531.968)" fill="black">
+        <tspan font-family="Helvetica Neue" font-size="19" font-weight="500" x=".3175" y="18" textLength="63.365">domain</tspan>
+        <tspan font-family="Helvetica Neue" font-size="19" font-weight="500" x="26.1955" y="40.532" textLength="11.609">X</tspan>
+      </text>
+      <text transform="translate(812.25 531.968)" fill="black">
+        <tspan font-family="Helvetica Neue" font-size="19" font-weight="500" x=".263" y="18" textLength="84.474">codomain</tspan>
+        <tspan font-family="Helvetica Neue" font-size="19" font-weight="500" x="36.344" y="40.532" textLength="12.312">Y</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
