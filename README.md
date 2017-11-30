@@ -17,7 +17,7 @@ Here are some of the concepts we will discuss:
 - Implementing secure business services using functions
 - Streaming and processing data in real-time using functions 
 
-By the end of this session, you will learn how to implement a real-world high throughput event streaming processor from your favorite data store to WebSocket clients.
+By the end of this session, you will learn how to implement an event streaming processor from your favorite data store to WebSocket clients.
 
 ## Slides
 
