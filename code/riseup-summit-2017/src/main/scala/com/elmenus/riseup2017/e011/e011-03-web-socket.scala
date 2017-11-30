@@ -5,7 +5,6 @@ import akka.http.scaladsl.model.ws.{Message, TextMessage}
 import akka.http.scaladsl.server.Directives._
 import akka.stream._
 import akka.stream.scaladsl.{Flow, Source}
-import com.elmenus.riseup2017.e011.DB01.db
 import io.circe.generic.auto._
 import io.circe.syntax._
 import slick.jdbc.PostgresProfile.api._
@@ -63,7 +62,7 @@ object WebServer extends Context {
     bindingFuture
       .flatMap(_.unbind())
       .onComplete(_ => {
-        db.close()
+        postgres.close()
         actorSystem.terminate()
       })
   }
