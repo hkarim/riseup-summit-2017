@@ -1,4 +1,6 @@
 import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.Events exposing (..)
 import WebSocket
 import Material.Table as Table
 import Json.Decode exposing (..)
@@ -47,13 +49,15 @@ init url =
 
 
 type Msg
-    = NewMessage (Result String City)
+    = Send | WsMessage (Result String City)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        NewMessage a ->
+        Send ->
+            (model, WebSocket.send model.wsUrl "Hello, server!")
+        WsMessage a ->
             case a of
                 Result.Ok city ->
                     ({ model | cities = city :: model.cities }, Cmd.none)
@@ -69,25 +73,38 @@ update msg model =
 subscriptions : Model -> Sub Msg
 subscriptions model =
     WebSocket.listen model.wsUrl (decodeString decodeCity)
-    |> Sub.map NewMessage
+    |> Sub.map WsMessage
 
 -- VIEW
 
 
 view : Model -> Html Msg
 view model =
-    Table.table []
-        [ Table.thead []
-        [ Table.tr []
-            [ Table.th [] [ text "id" ]
-            , Table.th [ ] [ text "name" ]
-            , Table.th [ ] [ text "country code" ]
-            , Table.th [ ] [ text "district" ]
-            , Table.th [ ] [ text "population" ]
+   let 
+        table = 
+            Html.div [style [("padding-top", "10px")]]
+                [
+                    Table.table []
+                    [ Table.thead []
+                    [ Table.tr []
+                        [ Table.th [] [ text "ID" ]
+                        , Table.th [] [ text "NAME" ]
+                        , Table.th [] [ text "COUNTRY CODE" ]
+                        , Table.th [] [ text "DISTRICT" ]
+                        , Table.th [] [ text "POPULATION" ]
+                        ]
+                    ]
+                    , Table.tbody [] (citiesView model.cities)
+                    ]
+                ]
+            
+    in
+        Html.div [style [("padding-top", "10px"), ("margin-left", "20%")]]
+            [
+                Html.button [class "mdl-js-button mdl-button mdl-button--raised", onClick Send] [text "START"]
+                , table
             ]
-        ]
-        , Table.tbody [] (citiesView model.cities)
-        ]
+    
 
 citiesView: List City -> List (Html msg)
 citiesView cities =
