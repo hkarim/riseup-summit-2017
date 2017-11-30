@@ -42,7 +42,7 @@ object WebServer extends Context {
       .withAttributes(Attributes.inputBuffer(initial = 10, max = 100))
 
   // Construct WS flow
-  val cityWebSocketService: Flow[Message, Message, Any] =
+  val cityWebSocketFlow: Flow[Message, Message, Any] =
     Flow[Message]
       .flatMapConcat(_ => source)
 
@@ -50,7 +50,7 @@ object WebServer extends Context {
     val route =
       pathPrefix("city") {
         pathEndOrSingleSlash {
-          handleWebSocketMessages(cityWebSocketService)
+          handleWebSocketMessages(cityWebSocketFlow)
         }
       }
 

@@ -697,6 +697,392 @@ def insert[A](tree: Tree[A], data: A)
 
 }
 ```
+
+---
+template: inverse
+## Not Enough Functions!
+---
+
+layout: false
+#### `map` Trial 01 | What's wrong with this?
+
+.pull-left[
+```scala
+trait Container[A] {
+  def map[B](f: A => B): Container[B]
+}
+
+trait Bag[A] {
+  def map[B](f: A => B): Bag[B]
+}
+```
+]
+
+.pull-right[
+```scala
+def container: Container[Int] = ???
+def bag: Bag[String] = ???
+```
+]
+
+Having:
+
+```scala
+def change[A, B](instance: Container[A])(f: A => B): Container[B] = 
+  instance.map(f)
+def change[A, B](instance: Bag[A])(f: A => B): Bag[B] = 
+  instance.map(f)
+```
+
+Then:
+```scala
+change(container)(_ + 1)
+change(bag)(string => s"here is your $string")
+```
+
+---
+
+layout: false
+#### `map` Trial 02 | What's wrong with this?
+
+
+```scala
+trait Mapped[A] {
+  def map[B](f: A => B): Mapped[B]
+}
+
+trait Container[A] extends Mapped[A]
+
+trait Bag[A] extends Mapped[A]
+```
+
+Then:
+```scala
+change(container)(_ + 1)
+change(bag)(string => s"here is your $string")
+```
+
+---
+
+layout: false
+#### `map` Trial 03 | What's wrong with this?
+
+
+```scala
+trait Functor[F[_]] {
+  def map[A, B](fa: F[A])(f: A => B): F[B]
+}
+
+trait Container[A]
+
+trait Bag[A]
+
+def change[F[_], A, B]
+  (instance: F[A])(f: A => B)
+  (functor: Functor[F]): F[B] = functor.map(instance)(f)
+```
+
+And:
+
+```scala
+def containerFunctor: Functor[Container] = ???
+def bagFunctor: Functor[Bag] = ???
+```
+
+Then:
+```scala
+change(container)(_ + 1)(containerFunctor)
+change(bag)(string => s"here is your $string")(bagFunctor)
+```
+
+---
+
+layout: false
+#### `map` Trial 04 | What's wrong with this?
+
+
+```scala
+trait Functor[F[_]] {
+  def map[A, B](fa: F[A])(f: A => B): F[B]
+}
+
+trait Container[A]
+
+trait Bag[A]
+
+def change[F[_], A, B]
+  (instance: F[A])(f: A => B)
+  (implicit functor: Functor[F]): F[B] = functor.map(instance)(f)
+
+```
+
+And:
+
+```scala
+implicit def containerFunctor: Functor[Container] = ???
+implicit def bagFunctor: Functor[Bag] = ???
+```
+
+Then:
+```scala
+change(container)(_ + 1)
+change(bag)(string => s"here is your $string")
+```
+
+---
+
+layout: false
+### Functor
+.center[
+<img src="graphics/functor.svg" width="80%">
+]
+
+---
+
+layout: false
+### Pure
+.center[
+<img src="graphics/pure.svg" width="50%">
+]
+
+---
+
+layout: false
+### FlatMap
+.center[
+<img src="graphics/flatmap.svg" width="80%">
+]
+
+---
+template: inverse
+## Functional Data Access
+Getting Ready for the Real World
+
+---
+
+layout: false
+## Data Access
+### IO
+
+```scala
+lazy val db: Database = Database.forConfig("db.elmenus", configuration)
+
+// create an action to be performed on the database
+// we are not running the action here
+val io: DBIO[Vector[Int]] = sql"select 1".as[Int]
+
+// run the action, i.e. perform IO
+val f: Future[Vector[Int]] = db.run(io)
+
+// register a callback when the IO is done
+f.onComplete {
+  case Success(v) => println(v)
+  case Failure(e) => e.printStackTrace()
+}
+
+// block until we get the result back
+// do not do this in your code
+Await.result(f, Duration.Inf)
+
+// clean up
+db.close()
+
+```
+---
+
+layout: false
+## Data Access
+### Callback Hell
+
+```scala
+val createAccountTable: DBIO[Int] =  
+  sqlu"create table if not exists account(id bigint, email varchar(255))"
+
+def insertAccount(account: Account): DBIO[Int] = 
+  sqlu"insert into account values (${account.id}, ${account.email})"
+
+val findAllAccounts: DBIO[Vector[Account]] = 
+  sql"select id, email from account".as[Account]
+
+val dropAccountTable: DBIO[Int] = 
+  sqlu"drop table account"
+
+```
+
+We need to:
+- create the `Account` table
+- insert an `Account`
+- get all `Account`s
+- drop the table
+---
+
+layout: false
+## Data Access
+### Callback Hell
+
+```scala
+createAccountTable.flatMap { _ =>
+    insertAccount(account)
+      .flatMap { _ =>
+          findAllAccounts
+            .flatMap { accounts =>
+                dropAccountTable
+                  .map { _ =>
+                      accounts
+                  }
+            }
+      }
+}
+
+```
+
+We need to:
+- create the `Account` table
+- insert an `Account`
+- get all `Account`s
+- drop the table
+
+---
+
+layout: false
+## Data Access
+### `for` Comprehension
+
+```scala
+for {
+  _        <- createAccountTable
+  _        <- insertAccount(account)
+  accounts <- findAllAccounts
+  _        <- dropAccountTable
+} yield accounts
+
+```
+
+We need to:
+- create the `Account` table
+- insert an `Account`
+- get all `Account`s
+- drop the table
+
+---
+template: inverse
+## Streaming Data
+---
+layout: false
+### Source - Flow - Sink
+.center[
+<img src="graphics/source-flow-sink.svg" width="80%">
+]
+
+---
+
+layout: false
+### Source - Flow - Sink
+.center[
+<img src="graphics/source-flow-sink.svg" width="80%">
+]
+
+Source
+```scala
+val citySource =
+  Source
+    .fromPublisher(
+      postgres.stream(sql"select * from city limit 100".as[City]))
+```
+
+Flow
+```scala
+val cityFlow = Flow[City].map(_.asJson.noSpaces)
+```
+
+Sink
+```scala
+val citySink = Sink.foreach[String](println)
+```
+
+---
+
+layout: false
+### Source - Flow - Sink
+.center[
+<img src="graphics/source-flow-sink.svg" width="80%">
+]
+
+Wire it together
+```scala
+val graph = citySource.via(cityFlow).to(citySink)
+```
+
+---
+
+layout: false
+### Example - Streaming WebSocket
+.center[
+<img src="graphics/websocket.svg" width="80%">
+]
+
+---
+
+layout: false
+### Example - Streaming WebSocket
+.center[
+<img src="graphics/websocket.svg" width="80%">
+]
+
+Source
+```scala
+// data source, populated from DB
+val city: Source[City, Any] =
+  Source
+    .fromPublisher(
+      postgres.stream(
+        sql"select id, name, countrycode, district, population from city"
+          .as[City]))
+
+// map City into WebSocket TextMessage
+def map(city: City): Message =
+  TextMessage(city.asJson.noSpaces)
+
+// construct the websocket source
+def source: Source[Message, Any] =
+  city
+    .map(map)
+    .delay(1.second, DelayOverflowStrategy.backpressure)
+```
+---
+
+layout: false
+### Example - Streaming WebSocket
+.center[
+<img src="graphics/websocket.svg" width="80%">
+]
+
+Flow
+```scala
+// construct the WebSocket flow
+val cityWebSocketFlow: Flow[Message, Message, Any] =
+  Flow[Message]
+    .flatMapConcat(_ => source)
+```
+---
+
+layout: false
+### Example - Streaming WebSocket
+.center[
+<img src="graphics/websocket.svg" width="80%">
+]
+
+Sink
+```scala
+val route =
+  pathPrefix("city") {
+    pathEndOrSingleSlash {
+      handleWebSocketMessages(cityWebSocketFlow)
+    }
+  }
+
+val bindingFuture = Http().bindAndHandle(route, ip, port)
+```
 ---
 
 template: inverse

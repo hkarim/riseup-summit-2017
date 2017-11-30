@@ -78,6 +78,8 @@ object Functors {
     val f1: Future[Int] = Future.successful(1)
     val f2: Future[Int] = Future.failed[Int](new NoSuchElementException)
 
+    Monad[Future].pure(1)
+
     run(f1)( _ + 1 )
     run(f2)( _ + 1 )
 

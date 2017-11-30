@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="95 57 1058 467" width="1058pt" height="467pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.3.1 
+    <dc:date>2017-11-30 16:27:01 +0000</dc:date>
+  </metadata>
+  <defs>
+    <font-face font-family="Menlo" font-size="37" panose-1="2 11 7 9 3 6 4 2 2 4" units-per-em="1000" underline-position="-63.47656" underline-thickness="43.94531" slope="0" x-height="546.875" cap-height="729.9805" ascent="928.2227" descent="-235.83984" font-weight="bold">
+      <font-face-src>
+        <font-face-name name="Menlo-Bold"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Menlo" font-size="37" panose-1="2 11 6 9 3 8 4 2 2 4" units-per-em="1000" underline-position="-63.47656" underline-thickness="43.94531" slope="0" x-height="546.875" cap-height="729.0039" ascent="928.2227" descent="-235.83984" font-weight="500">
+      <font-face-src>
+        <font-face-name name="Menlo-Regular"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Menlo" font-size="21" panose-1="2 11 7 9 3 6 4 2 2 4" units-per-em="1000" underline-position="-63.47656" underline-thickness="43.94531" slope="0" x-height="546.875" cap-height="729.9805" ascent="928.2227" descent="-235.83984" font-weight="bold">
+      <font-face-src>
+        <font-face-name name="Menlo-Bold"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="#005c5d">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Consolas" font-size="34" panose-1="2 11 6 9 2 2 4 3 2 4" units-per-em="1000" underline-position="-129.88281" underline-thickness="70.3125" slope="0" x-height="499.02344" cap-height="646.97266" ascent="742.6758" descent="-257.32422" font-weight="500">
+      <font-face-src>
+        <font-face-name name="Consolas"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Consolas" font-size="34" panose-1="2 11 7 9 2 2 4 3 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="94.72656" slope="0" x-height="506.83594" cap-height="648.9258" ascent="742.6758" descent="-257.32422" font-weight="bold">
+      <font-face-src>
+        <font-face-name name="Consolas-Bold"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_2" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="#b1001c">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>functor</title>
+    <rect fill="white" width="1153" height="775"/>
+    <g>
+      <title>Layer 1</title>
+      <text transform="translate(390.75 63)" fill="#b1001c">
+        <tspan font-family="Menlo" font-size="37" font-weight="bold" fill="#b1001c" x=".03442383" y="34" textLength="155.93115">Functor</tspan>
+      </text>
+      <text transform="translate(556.75 63)" fill="black">
+        <tspan font-family="Menlo" font-size="37" font-weight="500" x=".17236328" y="34" textLength="22.27588">[</tspan>
+        <tspan font-family="Menlo" font-size="37" font-weight="bold" fill="#9437ff" x="22.448242" y="34" textLength="22.27588">F</tspan>
+        <tspan font-family="Menlo" font-size="37" font-weight="500" x="44.72412" y="34" textLength="89.10352">[_]]</tspan>
+      </text>
+      <text transform="translate(360.5 245)" fill="#9437ff">
+        <tspan font-family="Menlo" font-size="37" font-weight="bold" fill="#9437ff" x=".25854492" y="34" textLength="200.4829">Container</tspan>
+      </text>
+      <text transform="translate(695.25 245)" fill="#9437ff">
+        <tspan font-family="Menlo" font-size="37" font-weight="bold" fill="#9437ff" x=".08618164" y="34" textLength="66.82764">Bag</tspan>
+      </text>
+      <text transform="translate(493 163.5)" fill="#9437ff">
+        <tspan font-family="Menlo" font-size="21" font-weight="bold" fill="#9437ff" x=".35546875" y="19" textLength="202.28906">type constructor</tspan>
+      </text>
+      <line x1="594.3793" y1="158" x2="594.0683" y2="112.89976" marker-end="url(#FilledArrow_Marker)" stroke="#005c5d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 568.8269 193 C 551.83835 204.58022 529.042 220.11931 508.7863 233.92657" marker-end="url(#FilledArrow_Marker)" stroke="#005c5d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 620.3173 193 C 637.7835 204.8393 661.3544 220.81657 682.0584 234.85058" marker-end="url(#FilledArrow_Marker)" stroke="#005c5d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <text transform="translate(100.25 339.59473)" fill="#cc7831">
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#cc7831" x="0" y="25" textLength="74.77344">def </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#ffc76d" x="74.77344" y="25" textLength="56.08008">map</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="130.85352" y="25" textLength="18.69336">[</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="149.54688" y="25" textLength="74.77344">A, B</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="224.3203" y="25" textLength="112.16016">](fa: </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="bold" fill="#9437ff" x="336.48047" y="25" textLength="18.69336">F</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="355.17383" y="25" textLength="18.69336">[</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="373.8672" y="25" textLength="18.69336">A</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="392.56055" y="25" textLength="112.16016">])(f: </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="504.7207" y="25" textLength="37.38672">A </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="542.1074" y="25" textLength="56.08008">=&gt; </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="598.1875" y="25" textLength="18.69336">B</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="616.88086" y="25" textLength="56.08008">): </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="bold" fill="#9437ff" x="672.9609" y="25" textLength="18.69336">F</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="691.6543" y="25" textLength="18.69336">[</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="710.34766" y="25" textLength="18.69336">B</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="729.041" y="25" textLength="18.69336">]</tspan>
+      </text>
+      <text transform="translate(100.25 411.59473)" fill="#cc7831">
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#cc7831" x="0" y="25" textLength="74.77344">def </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#ffc76d" x="74.77344" y="25" textLength="56.08008">map</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="130.85352" y="25" textLength="18.69336">[</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="149.54688" y="25" textLength="18.69336">A</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="168.24023" y="25" textLength="37.38672">, </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="205.62695" y="25" textLength="18.69336">B</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="224.3203" y="25" textLength="112.16016">](fa: </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="bold" fill="#9437ff" x="336.48047" y="25" textLength="168.24023">Container</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="504.7207" y="25" textLength="18.69336">[</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="523.41406" y="25" textLength="18.69336">A</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="542.1074" y="25" textLength="112.16016">])(f: </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="654.2676" y="25" textLength="37.38672">A </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="691.6543" y="25" textLength="56.08008">=&gt; </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="747.7344" y="25" textLength="18.69336">B</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="766.4277" y="25" textLength="56.08008">): </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="bold" fill="#9437ff" x="822.5078" y="25" textLength="168.24023">Container</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="990.748" y="25" textLength="18.69336">[</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="1009.4414" y="25" textLength="18.69336">B</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="1028.1348" y="25" textLength="18.69336">]</tspan>
+      </text>
+      <text transform="translate(100.25 478.5947)" fill="#cc7831">
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#cc7831" x="0" y="25" textLength="74.77344">def </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#ffc76d" x="74.77344" y="25" textLength="56.08008">map</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="130.85352" y="25" textLength="18.69336">[</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="149.54688" y="25" textLength="18.69336">A</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="168.24023" y="25" textLength="37.38672">, </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="205.62695" y="25" textLength="18.69336">B</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="224.3203" y="25" textLength="112.16016">](fa: </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="bold" fill="#9437ff" x="336.48047" y="25" textLength="56.08008">Bag</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="392.56055" y="25" textLength="18.69336">[</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="411.2539" y="25" textLength="18.69336">A</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="429.94727" y="25" textLength="112.16016">])(f: </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="542.1074" y="25" textLength="37.38672">A </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="579.49414" y="25" textLength="56.08008">=&gt; </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="635.5742" y="25" textLength="18.69336">B</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="654.2676" y="25" textLength="56.08008">): </tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="bold" fill="#9437ff" x="710.34766" y="25" textLength="56.08008">Bag</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="766.4277" y="25" textLength="18.69336">[</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#4e807d" x="785.1211" y="25" textLength="18.69336">B</tspan>
+        <tspan font-family="Consolas" font-size="34" font-weight="500" fill="#a9b7c7" x="803.8145" y="25" textLength="18.69336">]</tspan>
+      </text>
+      <text transform="translate(100.25 72.5)" fill="#b1001c">
+        <tspan font-family="Menlo" font-size="21" font-weight="bold" fill="#b1001c" x=".10620117" y="19" textLength="113.7876">typeclass</tspan>
+      </text>
+      <path d="M 219.25 84.5 C 264.01995 84.5 325.24878 84.5 375.8458 84.5" marker-end="url(#FilledArrow_Marker_2)" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

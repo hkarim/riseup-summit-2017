@@ -7,7 +7,7 @@ import org.slf4j.{Logger, LoggerFactory}
 import slick.jdbc.GetResult
 import slick.jdbc.PostgresProfile.api._
 
-import scala.concurrent.Await
+import scala.concurrent.{Await, Future}
 import scala.concurrent.duration.Duration
 import scala.util.{Failure, Success}
 
@@ -20,7 +20,9 @@ object DB01 {
 
   def main(args: Array[String]): Unit = {
 
-    val f = db.run(sql"select 1".as[Int])
+    val io: DBIO[Vector[Int]] = sql"select 1".as[Int]
+
+    val f: Future[Vector[Int]] = db.run(io)
 
     f.onComplete {
       case Success(v) => println(v)
@@ -61,7 +63,6 @@ object DB02 {
     accounts <- findAllAccounts
     _        <- dropAccountTable
   } yield accounts
-
 
   def main(args: Array[String]): Unit = {
 

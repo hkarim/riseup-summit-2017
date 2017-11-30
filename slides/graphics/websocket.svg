@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="99 -33 538 94" width="538pt" height="94pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.3.1 
+    <dc:date>2017-11-30 19:21:15 +0000</dc:date>
+  </metadata>
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="500">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>WebSocket</title>
+    <rect fill="white" width="1141" height="775"/>
+    <g>
+      <title>Layer 1</title>
+      <path d="M 310.5 -31.5 L 426 -31.5 C 427.10457 -31.5 428 -30.60457 428 -29.5 L 428 19 C 428 20.10457 427.10457 21 426 21 L 310.5 21 C 309.39543 21 308.5 20.10457 308.5 19 L 308.5 -29.5 C 308.5 -30.60457 309.39543 -31.5 310.5 -31.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <rect x="299" y="-15.25" width="20" height="20" fill="#d5fc79"/>
+      <rect x="299" y="-15.25" width="20" height="20" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="418" y="-15.25" width="20" height="20" fill="#d6d6d6"/>
+      <rect x="418" y="-15.25" width="20" height="20" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 102.5 -31.5 L 218 -31.5 C 219.10457 -31.5 220 -30.60457 220 -29.5 L 220 19 C 220 20.10457 219.10457 21 218 21 L 102.5 21 C 101.39543 21 100.5 20.10457 100.5 19 L 100.5 -29.5 C 100.5 -30.60457 101.39543 -31.5 102.5 -31.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <rect x="210" y="-15.25" width="20" height="20" fill="#d6d6d6"/>
+      <rect x="210" y="-15.25" width="20" height="20" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 518.5 -31.5 L 634 -31.5 C 635.1046 -31.5 636 -30.60457 636 -29.5 L 636 19 C 636 20.10457 635.1046 21 634 21 L 518.5 21 C 517.3954 21 516.5 20.10457 516.5 19 L 516.5 -29.5 C 516.5 -30.60457 517.3954 -31.5 518.5 -31.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <rect x="507" y="-15.25" width="20" height="20" fill="#d5fc79"/>
+      <rect x="507" y="-15.25" width="20" height="20" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 230 -5.25 C 244.2625 -5.25 270.74783 -5.25 289.09733 -5.25" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path d="M 438 -5.25 C 452.2625 -5.25 478.7478 -5.25 497.09733 -5.25" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <text transform="translate(130.75 36.776)" fill="black">
+        <tspan font-family="Helvetica Neue" font-size="16" font-weight="500" x=".42" y="15" textLength="68.16">Database</tspan>
+      </text>
+      <text transform="translate(332 36.776)" fill="black">
+        <tspan font-family="Helvetica Neue" font-size="16" font-weight="500" x=".356" y="15" textLength="15.696">Pr</tspan>
+        <tspan font-family="Helvetica Neue" font-size="16" font-weight="500" x="15.764" y="15" textLength="56.88">ocessor</tspan>
+      </text>
+      <text transform="translate(530 36.776)" fill="black">
+        <tspan font-family="Helvetica Neue" font-size="16" font-weight="500" x=".468" y="15" textLength="14.816">W</tspan>
+        <tspan font-family="Helvetica Neue" font-size="16" font-weight="500" x="14.372" y="15" textLength="68.16">ebSocket</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
