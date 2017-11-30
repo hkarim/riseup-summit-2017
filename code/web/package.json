@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "elm": "elm-package install",
-    "build": "elm-make src/Main.elm --output index.js"
+    "build": "elm-make src/Main.elm --output index.js",
+    "websocket": "http-server -p 9090"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "elm": "^0.18.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
   }
 }
