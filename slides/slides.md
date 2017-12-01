@@ -1177,6 +1177,100 @@ val bindingFuture = Http().bindAndHandle(route, ip, port)
 ```
 ---
 
+layout: false
+### Real-World Stream - Order Monitor
+.center[
+<img src="graphics/stream-graph.svg" width="90%">
+]
+
+---
+
+layout: false
+
+<pre>
+<code class="scala hljs remark-code remark-code-smaller">
+def activityMonitor: KillSwitch = {
+
+  val switch: SharedKillSwitch = KillSwitches.shared("ActivityMonitorProcessorKillSwitch")
+
+  val graph =
+    RunnableGraph.fromGraph(GraphDSL.create() { implicit b =>
+      import GraphDSL.Implicits._
+
+      val broadcastOrders            = b.add(Broadcast[StreamMessage](2))
+      val mergeOrderInspectionResult = b.add(Merge[InspectionResult](2))
+      val broadcastInspection        = b.add(Broadcast[InspectionResult](3))
+      val mergeInspection            = b.add(Merge[Record](3))
+      val source                     = b.add(streamSource)
+      val pending                    = b.add(pendingFlow(switch))
+      val seen                       = b.add(seenFlow(switch))
+      val checkLater                 = b.add(checkLaterFlow(switch))
+      val ticket                     = b.add(ticketFlow(switch))
+      val error                      = b.add(errorFlow(switch))
+      val sink                       = b.add(Producer.plainSink(producerSettings))
+
+      source ~> broadcastOrders.in
+
+      broadcastOrders.out(0) ~> pending ~> mergeOrderInspectionResult
+      broadcastOrders.out(1) ~> seen ~> mergeOrderInspectionResult
+
+      mergeOrderInspectionResult ~> broadcastInspection.in
+
+      broadcastInspection.out(0) ~> ticket ~> mergeInspection
+      broadcastInspection.out(1) ~> checkLater ~> mergeInspection
+      broadcastInspection.out(2) ~> error ~> mergeInspection
+
+      mergeInspection ~> sink
+
+      ClosedShape
+    })
+
+  graph.run()
+
+  switch
+}
+</code>
+</pre>
+
+---
+
+layout: false
+### Bonus - Kleisli
+
+```scala
+case class Kleisli[F[_], A, B](run: A => F[B])
+```
+
+```scala
+// Given an AuthenticatedUser, compose a DBIO[A]
+type SecureAction[A] = Kleisli[DBIO, AuthenticatedUser, A]
+
+// check the required permission, then, given the user, compose a DBIO[A]
+def authorized[A](required: Permission)
+                 (f: AuthenticatedUser => DBIO[A]): SecureAction[A]
+```
+
+```scala
+def findValidRestaurantAggregate(uuid: RestaurantUUID): 
+  SecureAction[RestaurantAggregate] = 
+    authorized(Permissions.Guest) { guest =>
+      // elmenus.com secrets ...
+    }
+```
+
+```scala
+get {
+  onSuccess(
+    db.run(
+      service
+        .findValidRestaurantAggregate(restaurantUUID).run(user))) { restaurant =>
+          complete((StatusCodes.OK, restaurant))
+      }
+    }
+```
+
+---
+
 template: inverse
 
 ## Talk to us
