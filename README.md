@@ -19,6 +19,18 @@ Here are some of the concepts we will discuss:
 
 By the end of this session, you will learn how to implement an event streaming processor from your favorite data store to WebSocket clients.
 
+## Quick Environment Setup
+
+- Install [Vagrant](https://www.vagrantup.com) for your platform
+- Install [Ansible](https://www.ansible.com) for your platform
+- Inside `deploy` directory run `vagrant up`
+- Run `ansible-playbook --inventory-file=local -v --become -e "dropdb=yes" --private-key=.vagrant/machines/default/virtualbox/private_key db.yml`
+- If you would like to run the examples discussed in the workshop you need [SBT](http://www.scala-sbt.org) and [Node](https://nodejs.org/en/)
+- Scala examples are under `code/riseup-summit-2017`
+- A command-line Node based WebSocket client is under `code/client`
+- Elm based web application with a WebSocket client is under `code/web`
+- Instructions to run the examples are under their respective directories
+
 ## Slides
 
 Slides are in `slides` directory, inside `slides` directory, run:

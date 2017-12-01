@@ -38,13 +38,11 @@ layout: false
 - `val`, `def`, `lazy` and type inference
 - Generics
 - Invariant, Covariant and Contravariant
-- `Any`, `AnyVal`, `AnyRef` and `Nothing`
 - `case class`, `sealed trait` and co-products
 - `Option`, `Vector` and `Future`
 - Pattern Matching
 - Total and partial functions
 - Generic - Polymorphic - functions
-- By-name parameters
 - Higher-Order functions
 - Currying, Multiple parameter lists and Partially applied functions
 - Composing functions
@@ -602,6 +600,57 @@ What is `foldLeft`?
 ```scala
 def foldLeft[B](z: B)(op: (B, A) => B): B
 ```
+---
+
+layout: false
+## Scala
+### Higher-Order Functions
+
+What is `foldLeft`?
+
+```scala
+def foldLeft[B](z: B)(op: (B, A) => B): B
+```
+
+Example:
+```scala
+val schedule = List("had breakfast", "went to RiseUp") 
+
+val folded = 
+  schedule
+    .foldLeft("woke up early")( (accumulator, next) => s"$accumulator then $next")
+```
+
+Then `folded` value is:
+```scala
+"woke up early then had breakfast then went to RiseUp"
+```
+
+---
+
+layout: false
+## Scala
+### Companion Objects
+
+```scala
+// Company trait
+trait Company {
+  def name: String
+}
+
+// Company companion object
+object Company {
+
+  def apply(companyName: String): Company = new Company {
+    def name: String = companyName
+  }
+
+}
+
+val c01 = Company.apply("c01") // invoke `apply` explicitly
+val c02 = Company("c02")       // invoke `apply` also, syntactic sugar
+
+```
 
 ---
 
@@ -828,6 +877,49 @@ Then:
 change(container)(_ + 1)
 change(bag)(string => s"here is your $string")
 ```
+
+---
+
+layout: false
+### What about `flatMap`?
+
+```scala
+def flatMap[B](f: A => Option[B]): Option[B]
+```
+
+Example:
+
+```scala
+Some(1).flatMap(i => Some(i + 1))               // Some(2)
+
+Option.empty[Int].flatMap(i => Some(i + 1))     // None
+```
+
+---
+
+layout: false
+
+### What about `flatMap`?
+
+```scala
+def flatMap[B](f: A => List[B]): List[B]  // simplified
+```
+
+Example:
+
+```scala
+List(1,2,3).flatMap(i => List(s"number $i", s"número $i", s"nombre $i")) 
+// List(
+//      number 1, número 1, nombre 1, 
+//      number 2, número 2, nombre 2, 
+//      number 3, número 3, nombre 3)
+
+List.empty[Int].flatMap(i => List(s"number $i", s"número $i", s"nombre $i"))
+// List()
+```
+---
+template: inverse
+## Getting Serious
 
 ---
 

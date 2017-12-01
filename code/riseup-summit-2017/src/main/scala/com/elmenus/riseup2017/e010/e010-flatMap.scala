@@ -1,5 +1,23 @@
 package com.elmenus.riseup2017.e010
 
+object FlatMapExample {
+
+  def main(args: Array[String]): Unit = {
+
+    val option      = Some(1).flatMap(i => Some(i + 1))
+    val emptyOption = Option.empty[Int].flatMap(i => Some(i + 1))
+
+    println(option)
+    println(emptyOption)
+
+    val list      = List(1,2,3).flatMap(i => List(s"number $i", s"número $i", s"nombre $i"))
+    val emptyList = List.empty[Int].flatMap(i => List(s"number $i", s"número $i", s"nombre $i"))
+
+    println(list)
+    println(emptyList)
+  }
+}
+
 object FlatMapModelExample {
 
   case class User(id: Long)

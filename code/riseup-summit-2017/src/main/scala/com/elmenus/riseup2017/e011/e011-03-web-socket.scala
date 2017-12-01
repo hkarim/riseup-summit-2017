@@ -61,9 +61,9 @@ object WebServer extends Context {
 
     bindingFuture
       .flatMap(_.unbind())
-      .onComplete(_ => {
+      .onComplete { _ =>
         postgres.close()
         actorSystem.terminate()
-      })
+      }
   }
 }
